@@ -10,4 +10,7 @@ const int = setInterval(() => {
     console.log("interval time")
 }, 1000);
 
+// directory paths
+console.log(__dirname);
+console.log(__filename);
 
