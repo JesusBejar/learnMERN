@@ -12,3 +12,7 @@ console.log(abc.coolnesslevel);
 const { people, coolnesslevel} = require('./people')
 console.log(people, coolnesslevel);
 
+// os is core module w a lot of info
+const os = require('os')
+console.log(os);
+console.log(os.platform(), os.homedir());
