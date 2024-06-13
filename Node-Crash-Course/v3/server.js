@@ -12,6 +12,22 @@ const server = http.createServer((req, res) => {
     // res.setHeader("Content-Type", "text/plain");
     res.setHeader("Content-Type", "text/html");
 
+    // routing code
+    // routing goes into server.js files??
+    let path = "./views/";
+    switch(res.url) {
+        case "/":
+            path += "index.html";
+        break;
+        case "/about":
+            path += "about.html";
+        break;
+        default:
+            path += "404.html";
+        break;
+
+    }
+
     // send html file
     fs.readFile("./views/index.html", (err, data) => {
     if (err) {
@@ -22,7 +38,6 @@ const server = http.createServer((req, res) => {
         res.end(data);
     }
     });
-
 
     // send plain or html text
     // res.write("hola broski");
