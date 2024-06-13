@@ -14,22 +14,21 @@ const server = http.createServer((req, res) => {
 
     // routing code
     // routing goes into server.js files??
-    let path = "./views/";
-    switch(res.url) {
+    let path = './views/';
+    switch(req.url) {
         case "/":
-            path += "index.html";
-        break;
+            path += 'index.html';
+            break;
         case "/about":
-            path += "about.html";
-        break;
+            path += 'about.html';
+            break;
         default:
-            path += "404.html";
-        break;
-
+            path += '404.html';
+            break;
     }
 
     // send html file
-    fs.readFile("./views/index.html", (err, data) => {
+    fs.readFile(path, (err, data) => {
     if (err) {
         console.log(err);
         res.end();
@@ -43,7 +42,7 @@ const server = http.createServer((req, res) => {
     // res.write("hola broski");
     // res.write("<p>hola broski!<p>");
     // res.end();
-});
+    });
 
 // parameters = port number, domain name, callback function
 // localhost is a loop back domain
