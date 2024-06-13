@@ -36,6 +36,8 @@ const server = http.createServer((req, res) => {
             res.statusCode = 404
             break;
     }
+    // switch case statements are good
+    // switch case with Express framework is better
 
     // send html file
     fs.readFile(path, (err, data) => {
