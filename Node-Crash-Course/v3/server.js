@@ -1,4 +1,5 @@
 const http = require("http");
+const fs = require("fs");
 // req, res are both objects
 // request object practice
 const server = http.createServer((req, res) => {
@@ -11,10 +12,21 @@ const server = http.createServer((req, res) => {
     // res.setHeader("Content-Type", "text/plain");
     res.setHeader("Content-Type", "text/html");
 
-    // res.write("hola broski");
-    res.write("<p>hola broski!<p>");
+    // send html file
+    fs.readFile("./views/index.html", (err, data) => {
+    if (err) {
+        console.log(err);
+    } else {
+        res.write(data);
+        res.end();
+    }
+    });
 
-    res.end();
+
+    // send plain or html text
+    // res.write("hola broski");
+    // res.write("<p>hola broski!<p>");
+    // res.end();
 });
 
 // parameters = port number, domain name, callback function
