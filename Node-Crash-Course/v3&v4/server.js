@@ -28,7 +28,7 @@ const server = http.createServer((req, res) => {
         case "/about-me":
             // 301 = permanent redirect
             res.statusCode = 301
-            res.setHeader("Location", "/about");
+            res.setHeader("Location", "/about-us");
             res.end();
             break;
         default:
