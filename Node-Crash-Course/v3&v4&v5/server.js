@@ -6,8 +6,18 @@ const _ = require("lodash");
 const server = http.createServer((req, res) => {
     // console.log("request made");
     // console.log(req);
-    console.log(req.url, req.method);
+    // console.log(req.url, req.method);
 
+    // LODASH CODE
+    // random will give you a random num between two parameters
+    const num = _.random(0, 20);
+    console.log(num);
+
+    // once will let you run a function only once
+    const greet = _.once(() => {
+        console.log("ciao ciao");
+    });
+    greet();
     // respond object practice
     // set header content type
     // res.setHeader("Content-Type", "text/plain");
