@@ -1,5 +1,6 @@
 const http = require("http");
 const fs = require("fs");
+const _ = require("lodash");
 // req, res are both objects
 // request object practice
 const server = http.createServer((req, res) => {
