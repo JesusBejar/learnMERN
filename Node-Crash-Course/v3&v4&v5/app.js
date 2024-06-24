@@ -22,3 +22,16 @@ app.get("/index", (req, res) => {
     // path is sensitive, but it what way?
     res.sendFile("./views/index.html", { root: __dirname });
 })
+
+// redirects w express
+app.get("/about-us", (req, res) => {
+    res.redirect("/about");
+    // status code is set
+})
+
+// 404 page
+// .use is for every incoming request, translation its a default
+// be sure to put at the very bottom of route handlers
+app.use((req, res) => {
+    res.sendFile("./views/404.html", { root: __dirname });
+})
