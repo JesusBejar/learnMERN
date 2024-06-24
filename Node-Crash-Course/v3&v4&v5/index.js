@@ -25,7 +25,7 @@ app.get("/index", (req, res) => {
 
 // redirects w express
 app.get("/about-us", (req, res) => {
-    res.redirect("/about");
+    res.redirect("./views/about");
     // status code is set
 })
 
@@ -33,5 +33,5 @@ app.get("/about-us", (req, res) => {
 // .use is for every incoming request, translation its a default
 // be sure to put at the very bottom of route handlers
 app.use((req, res) => {
-    res.sendFile("./views/404.html", { root: __dirname });
+    res.status(404).sendFile("./views/404.html", { root: __dirname });
 })
