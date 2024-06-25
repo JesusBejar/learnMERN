@@ -23,7 +23,9 @@ app.get("/about", (req, res) => {
 
 app.get("/index", (req, res) => {
     // path is sensitive, but it what way?
-    res.sendFile("./views/index.html", { root: __dirname });
+    // res.sendFile("./views/index.html", { root: __dirname });
+    // below is how you render a view
+    res.render("index");
 })
 
 // redirects w express
