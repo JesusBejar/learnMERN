@@ -9,6 +9,13 @@ app.set("view engine", "ejs");
 // listen
 app.listen(3000);
 
+app.get("/", (req, res) => {
+    // path is sensitive, but it what way?
+    // res.sendFile("./views/index.html", { root: __dirname });
+    // below is how you render a view
+    res.render("index");
+})
+
 // below is a better switch case??
 app.get("/", (req, res) => {
     // send infers content header and status code
@@ -19,13 +26,6 @@ app.get("/", (req, res) => {
 // they are called route handlers
 app.get("/about", (req, res) => {
     res.send("<p>broooooooo about</p>")
-})
-
-app.get("/index", (req, res) => {
-    // path is sensitive, but it what way?
-    // res.sendFile("./views/index.html", { root: __dirname });
-    // below is how you render a view
-    res.render("index");
 })
 
 // redirects w express
