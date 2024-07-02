@@ -28,10 +28,8 @@ app.get("/about", (req, res) => {
     res.send("<p>broooooooo about</p>")
 })
 
-// redirects w express
-app.get("/about-us", (req, res) => {
-    res.redirect("./views/about");
-    // status code is set
+app.get("/views/create", (req, res) => {
+    res.render("create")
 })
 
 // 404 page
