@@ -38,5 +38,6 @@ app.get("/about-us", (req, res) => {
 // .use is for every incoming request, translation its a default
 // be sure to put at the very bottom of route handlers
 app.use((req, res) => {
-    res.status(404).sendFile("./views/404.html", { root: __dirname });
+    res.status(404).render("404");
+    // res.status(404).sendFile("./views/404.html", { root: __dirname });
 })
